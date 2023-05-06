@@ -33,7 +33,10 @@
     $row_user = mysqli_fetch_assoc($result_user);
     $username = $row_user["username"];
     ?>
-    
+    <div id="user-info">
+		<p>Welcome, <?php echo $_SESSION['username']; ?>!</p>
+		<a href="logout.php">Logout</a>
+	</div>	
 	
 	<h2>Ask a question:</h2>
 	<form action="post_question.php" method="post">
