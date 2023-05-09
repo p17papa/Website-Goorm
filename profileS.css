@@ -1,0 +1,85 @@
+/* Profile page styles */
+body {
+  background-color: #f6f6f6;
+}
+
+.profile-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 50px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.profile-container h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.profile-container p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.profile-container form {
+  margin-top: 40px;
+}
+
+.profile-container label {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.profile-container input[type="text"],
+.profile-container input[type="email"],
+.profile-container input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.profile-container input[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #0077cc;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin: 0;
+}
+
+.profile-container input[type="submit"]:hover {
+  background-color: #005c99;
+}
+
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.button:hover {
+  background-color: #3e8e41;
+}
