@@ -13,14 +13,19 @@ $current_page = 'home';
 	<div class="topnav">
 	  <img src="search_logo.png" width="200" height="auto" class='search_logo'>
 	  <a class="<?php if ($current_page == 'home') {echo 'active';} ?>" href="home.php">Home</a>
-	  <a class="<?php if ($current_page == 'about') {echo 'active';} ?>" href="about.php">About</a>
+	  <a class="<?php if ($current_page == 'about') {echo 'active';} ?>" href="index.php">About</a>
 	  <a class="<?php if ($current_page == 'profile') {echo 'active';} ?>" href="profile.php">My Profile</a>
-	  <a href="logout.php">Log Out</a>	
-	  <input type="text" placeholder="Search..">
+	  <a href="logout.php">Log Out</a>
+	  <form action="search.php" method="get" style="float:right;">
+		  <input type="text" name="query" placeholder="Search..."><br>
+		  <button type="submit" style="margin-right:80px;">Search</button>
+		</form>
+	  
 	</div>
 	
 	<?php
 	include 'db_connect.php';
+	
 	?>
     <?php
     // Start the session and check if the user is logged in
