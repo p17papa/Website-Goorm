@@ -1,7 +1,4 @@
 /* Profile page styles */
-body {
-  background-color: #f6f6f6;
-}
 
 .profile-container {
   max-width: 800px;
@@ -63,7 +60,7 @@ body {
   background-color: #005c99;
 }
 
-.button {
+/* .button {
   background-color: #4CAF50;
   border: none;
   color: white;
@@ -83,3 +80,4 @@ body {
 .button:hover {
   background-color: #3e8e41;
 }
+ */
