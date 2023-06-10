@@ -1,0 +1,36 @@
+/*------------------ About page styles START --------------------- */
+.gradient{
+	background: linear-gradient(90deg, #8d96ff, #ffa9f9, #8d96ff);
+	color: transparent;
+  	-webkit-background-clip: text;
+  	background-clip: text;
+}
+
+body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    h1 {
+      text-align: center;
+    }
+    
+    p {
+      margin-bottom: 20px;
+    }
+    
+    ul {
+      list-style-type: disc;
+      margin-left: 20px;
+    }
+    
+    li {
+      margin-bottom: 10px;
+    }
+/*------------------ About page styles END --------------------- */
