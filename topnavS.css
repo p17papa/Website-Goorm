@@ -1,0 +1,94 @@
+/*--------------------Custom nav bar START-------------------- */
+/* Add a black background color to the top navigation bar */
+.topnav  { 
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 999;
+	height: 70px;	
+	background-color:#8d96ff;
+	border-top: 2px solid #a3ecc8;
+	border-bottom: 2px solid #ffffff;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+	float: left;
+	font-family: "Helvetica Neue", Arial, sans-serif;		
+	display: block;
+	color: black;
+	text-align: center;
+	padding: 18px 40px;
+	text-decoration: none;
+	font-size: 20px;
+	color: black;
+	text-decoration: none;
+	transition: background-color 0.3s, color 0.3s;
+	font-size: 16px;
+
+}
+.topnav input[type=text]::placeholder {
+	 color: white;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ffa9f9;
+  color: black;
+	transform: skewY(7deg);
+	  border-radius: 50px;
+	
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transition: border-radius 0.3s, box-shadow 0.3s;
+}
+
+/* Style the "active" element to highlight the current page */
+.topnav a.active {
+  background: linear-gradient(90deg, #fff7ad, #ffa9f9, #efc8ec);
+  color: #333;
+	  border-radius: 50px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transition: border-radius 0.3s, box-shadow 0.3s;
+}
+
+/* Style the search box inside the navigation bar */
+.topnav input[type=text] {
+	float: right;
+	padding: 6px;
+	border: none;
+	margin-top: 8px;
+	margin-right: 16px;
+	font-size: 17px;
+	background-color: transparent;
+	border: none;
+	border-bottom: 2px solid #fff;
+	/* color: #fff; */
+	font-size: 16px;
+	transition: border-color 0.3s;
+}
+
+.topnav input[type=text] {
+  border: 5px solid #ffffff;
+}
+.topnav input[type=text]:focus {
+  outline: none;
+  border-color: #ffa9f9;
+}
+.search_logo {
+	float: left;
+	display: inline-block;
+	margin-top:-45px;
+	/* filter: invert(1); */
+}
+.header {
+	background-color: #ffa9f9;
+	color: white;
+	padding: 20px;
+	font-family: "Helvetica Neue", Arial, sans-serif;
+	font-size: 16px;
+	
+}
+
+/* --------------------Custom nav bar END-------------------- */
