@@ -1,74 +1,45 @@
-/*--------------------Custom nav bar START-------------------- */
-.topnav {
-  overflow: hidden;
-  background-color: white;
-}
-
-.topnav a {
-  float: left;
-  display: block;
-  color: black;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 20px;
-}
-
-.topnav a:hover {
-  background-color: #fff7ad;
-  color: black;
-}
-
-.topnav a.active {
-  background:linear-gradient(90deg, #fff7ad, #ffa9f9, #efc8ec);
-}
-
-.topnav input[type=text] {
-  float: right;
-  padding: 6px;
-  border: none;
-  margin-top: 8px;
-  margin-right: 16px;
-  font-size: 17px;
-}
-
-.topnav input[type=text] {
-  border: 1px solid #ccc;
-}
-
-.search_logo {
-  float: left;
-  display: inline-block;
-}
-
-/* --------------------Custom nav bar END-------------------- */
-
 /*-------------------- Accordion & Q&A styles  START-------------------- */
+/* new Q input styles */
 .question-section {
   max-width: 800px;
-  margin: 0 auto;
+  margin: 50px auto;
   text-align: center;
   padding: 20px;
-}
-
-.question {
-  font-size: 24px;
-  margin-bottom: 10px;
+  background: linear-gradient(90deg, #efc8ec, #ffa9f9, #fff7ad);
+  color: #333;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
 }
 
 .form-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 20px;
+  background: linear-gradient(90deg, #efc8ec, #ffa9f9, #fff7ad);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.question {
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
+/* new Q input styles END*/
 .question-container {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   background-color: #f5f5f5;
   border-radius: 8px;
   padding: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+  background: linear-gradient(90deg, #fff7ad, #ffa9f9, #efc8ec);
+  resize: vertical; /* Allow vertical resizing */
+  /* overflow: auto; Add scrollbars when needed */
+  min-height: 100px; /* Set a minimum height */
+  max-height: 2000px; /* Set a maximum height */	
 }
 
 .question {
@@ -90,16 +61,22 @@
 
 .form-container input[type="text"],
 .form-container textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 10px;
+	border: none;
+	border-radius: 4px;
+	background-color: #f5f5f5;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	resize: none;
+	overflow: auto; /* Add scrollbar when needed */
+	min-height: 100px; 
+	max-height: 200px; 
 }
 
 .form-container input[type="submit"] {
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: #8d96ff;
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -117,20 +94,34 @@
 
 .question-content {
   margin-top: 10px;
+  background-color: #ffa9f9;
+  background: linear-gradient(90deg, #fff7ad, #ffa9f9, #efc8ec);
 }
 
 .answer-wrapper {
   display: none;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(90deg, #fff7ad, #ffa9f9, #efc8ec);
 }
 
 .answer-wrapper.active {
   display: block;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .answer {
   border: 1px solid #ccc;
   margin: 10px 0;
   padding: 10px;
+   background: linear-gradient(90deg, #8d96ff, #ffa9f9, #fff7ad);
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+#answer_text{
+	background: linear-gradient(90deg, #000000, #ffffff);
 }
 
 .accordion {
@@ -159,21 +150,20 @@
   transition: max-height 0.2s ease-out;
 }
 
-/* --------------------Accordion styles END-------------------- */
-
 .recent-questions {
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
   padding: 20px;
-  background-color: #f5f5f5;
+  background: linear-gradient(90deg, #fff7ad, #ffa9f9, #efc8ec);
+  color: #333;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-top: 50px;
 }
+/* Inside the recent questions section styles */
+.username{
+	font-weight:bold;
+}
+/* END Inside the recent questions section styles */
+/* --------------------Accordion styles END-------------------- */
 
-.recent-questions h1.question {
-  font-size: 24px;
-  margin-bottom: 10px;
-  color: #333;
-}
