@@ -4,20 +4,32 @@ $current_page = 'home';
 <html>
 <head>
     <title>Home</title>
-    <link rel="stylesheet" type="text/css" href="homeS.css">
+    <link rel="stylesheet" type="text/css" href="homeNS.css">
+	<link rel="stylesheet" type="text/css" href="topnavS.css">
+	<link rel="stylesheet" type="text/css" href="footerS.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
 </head>
+	<!-- temp styles -->
+	<style>
+	body{
+		background-color:#f7edf4;
+		} 
+	</style>
+	<!-- temp styles end -->
 <body>
-<div class="topnav">
-    <img src="search_logo.png" width="200" height="auto" class="search_logo">
-    <a class="<?php if ($current_page == 'home') {echo 'active';} ?>" href="home.php">Home</a>
-    <a class="<?php if ($current_page == 'about') {echo 'active';} ?>" href="index.php">About</a>
-    <a class="<?php if ($current_page == 'profile') {echo 'active';} ?>" href="profile.php">My Profile</a>
-    <a href="logout.php">Log Out</a>
-    <form action="search.php" method="get" style="float:right;">
-        <input type="text" name="query" placeholder="Search..."><br>
-        <button type="submit" style="margin-right:80px;">Search</button>
-    </form>
-</div>
+	<div class="topnav">
+		<a href="home.php" class="search_logo" style="background-color: transparent; ">    
+		<img src="stack-removebg-preview.png" width="250" height="auto" ></a>
+		<a class="<?php if ($current_page == 'home') {echo 'active';} ?>" href="home.php">Home</a>
+		<a class="<?php if ($current_page == 'about') {echo 'active';} ?>" href="index.php">About</a>
+		<a class="<?php if ($current_page == 'profile') {echo 'active';} ?>" href="profile.php">My Profile</a>
+		<a href="logout.php">Log Out</a>
+		<form action="search.php" method="get" style="float:right;">
+		<input type="text" name="query" placeholder="Search..."><br>
+			<!-- <button type="submit" style="margin-right:80px;">Search</button> -->
+	</form>
+	</div>
 
 <?php
 include 'db_connect.php';
@@ -27,7 +39,7 @@ include 'db_connect.php';
 // Start the session and check if the user is logged in
 session_start();
 if (!isset($_SESSION["user_id"])) {
-    header("Location: login.php");
+    header("Location: login.html");
     exit();
 }
 
@@ -58,6 +70,9 @@ $username = $row_user["username"];
 
 <div class="recent-questions">
     <h1 class="question">Recent Questions</h1>
+	<br>
+	<br>
+	<br>
     <?php
     // Connect to the database
     $servername = "localhost";
@@ -81,7 +96,8 @@ $username = $row_user["username"];
         echo "<div class='question-content'>";
         echo "<p class='username'>By: " . $row["username"] . "</p>";
         echo "<p class='content'>" . $row["content"] . "</p>";
-        echo "<p class='date'>Submitted on: " . $row["date_added"] . "</p>";
+        echo "<p class='date'>Submitted on: " . date("d/m/Y", strtotime($row_answer["date_added"])) . "</p>";
+
 
         // Display the answers to the question
         $question_id = $row["id"];
@@ -93,18 +109,25 @@ $username = $row_user["username"];
             echo "<div class='answer'>";
             echo "<p class='username'>Answer by " . $row_user["username"] . ":</p>";
             echo "<p class='content'>" . $row_answer["answer_text"] . "</p>";
-            echo "<p class='date'>Submitted on: " . $row_answer["date_added"] . "</p>";
+            echo "<p class='date'>Submitted on: " . date("d/m/Y", strtotime($row_answer["date_added"])) . "</p>";
+
             echo "</div>";
+			echo "<br>";
         }
         echo "</div>";
 
         // Display the answer form
         echo '<form class="answer-form" action="post_answer.php" method="post">';
         echo '<input type="hidden" name="question_id" value="' . $question_id . '">';
+		echo "<br>";
+		echo "<br>";
+		echo "<br>";
         echo '<label for="answer">Your answer:</label><br>';
         echo '<textarea id="answer_text" name="answer_text"></textarea><br><br>';
-        echo '<input type="submit" value="Post Answer">';
-        echo '</form>';
+        echo '<input type="submit" value="Post Answer" style="background-color: #8d96ff; color: white; border-color: #8d96ff;">';
+        echo "<br>";
+		echo "<br>";
+		echo '</form>';
 
         echo "</div>"; // question-content
         echo "</div>"; // question-container
@@ -114,9 +137,7 @@ $username = $row_user["username"];
     mysqli_close($conn);
     ?>
 </div>
-
-<!-- Add the following JavaScript code after the PHP code above -->
-<script>
+	<script>
     const questionContainers = document.querySelectorAll('.question-container');
     questionContainers.forEach((questionContainer) => {
         const questionHeading = questionContainer.querySelector('.question-heading');
@@ -126,5 +147,30 @@ $username = $row_user["username"];
         });
     });
 </script>
+	<br>
+	<footer>
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>About</h3>
+      <p>An academic project.</p>
+    </div>
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="https://webstuff.run-eu-central1.goorm.site/my_repo/home.php">Home</a></li>
+        <li><a href="https://webstuff.run-eu-central1.goorm.site/my_repo/index.php">About</a></li>
+        <li><a href="https://webstuff.run-eu-central1.goorm.site/my_repo/profile.php">My profile</a></li>
+		<li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>Contact</h3>
+      <p>123 Street, City</p>
+      <p>Email: info@example.com</p>
+      <p>Phone: 123-456-7890</p>
+    </div>
+  </div>
+</footer>
 </body>
 </html>
