@@ -2,11 +2,20 @@
 $current_page = 'home';
 
 // Check if the user has toggled the dark theme
-if (isset($_GET['theme']) && $_GET['theme'] === 'dark') {
-    $theme = 'dark';
+if (isset($_GET['theme']) && ($_GET['theme'] === 'dark' || $_GET['theme'] === 'light')) {
+    $theme = $_GET['theme'];
+} elseif (!empty($_COOKIE['theme'])) {
+    $theme = $_COOKIE['theme'];
 } else {
     $theme = 'light';
 }
+
+// Set the theme class for the body element
+$themeClass = ($theme === 'dark') ? 'dark-theme' : '';
+
+// Set the theme cookie
+setcookie('theme', $theme, time() + (86400 * 30), '/'); // Cookie expires in 30 days 
+
 ?>
 <html>
 <head>
@@ -155,19 +164,24 @@ $username = $row_user["username"];
 </div>
 
 <button onclick="toggleTheme()">Toggle Theme</button>
-<script>
-    function toggleTheme() {
-        const content = document.getElementById('content');
-        if (content.classList.contains('dark-theme')) {
-            content.classList.remove('dark-theme');
-            window.history.replaceState({}, '', '?theme=light');
-        } else {
-            content.classList.add('dark-theme');
-            window.history.replaceState({}, '', '?theme=dark');
+    <script>
+        function toggleTheme() {
+            const content = document.getElementById('content');
+            const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+            const isDarkMode = content.classList.contains('dark-theme');
+
+            if (isDarkMode) {
+                content.classList.remove('dark-theme');
+                document.cookie = 'theme=light; path=/';
+                window.history.replaceState({}, '', '?theme=light');
+            } else {
+                content.classList.add('dark-theme');
+                document.cookie = 'theme=dark; path=/';
+                window.history.replaceState({}, '', '?theme=dark');
+            }
+			 location.reload(); 
         }
-        location.reload(); // Reload the page
-    }
-</script>
+    </script>
 
 
 <br>
