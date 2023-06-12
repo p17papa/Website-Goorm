@@ -3,6 +3,17 @@ session_start();
 ?>
 <?php
 $current_page = 'about';
+// Check if the user has toggled the dark theme
+if (isset($_GET['theme']) && ($_GET['theme'] === 'dark' || $_GET['theme'] === 'light')) {
+    $theme = $_GET['theme'];
+} elseif (!empty($_COOKIE['theme'])) {
+    $theme = $_COOKIE['theme'];
+} else {
+    $theme = 'light';
+}
+
+// Set the theme class for the body element
+$themeClass = ($theme === 'dark') ? 'dark-theme' : '';
 ?>
 <html>
 <head>
@@ -104,9 +115,7 @@ $current_page = 'about';
 	<title>About Page</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 
-	
-	<link rel="stylesheet" type="text/css" href="topnavS.css">
-	<link rel="stylesheet" type="text/css" href="indexS.css">
+
 
 </head>
 	<div class="topnav">
