@@ -1,6 +1,5 @@
 # Website built on Goorm (Cloud IDE Service)
-This is an academic project that had some tasks to accomplice, such as:
-## Project Features
+This is an academic project that had some tasks to accomplice.
 
 # Project Goal
 The goal of this project is to create an online community (essentially a dynamic website) for posting, answering, and searching technical questions. This will be achieved by leveraging internet technologies, including HTML, CSS, JavaScript, PHP, XML, and REST API, along with a MySQL relational database.
