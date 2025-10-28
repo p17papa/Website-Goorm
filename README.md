@@ -1,4 +1,4 @@
-##Not completed yet
+## Not completed yet
 
 # Website built on Goorm (Cloud IDE Service)
 This is an academic project that had some tasks to accomplice.
